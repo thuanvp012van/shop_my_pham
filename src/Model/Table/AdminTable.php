@@ -66,6 +66,12 @@ class AdminTable extends Table
             ->notEmptyString('password');
 
         $validator
+            ->scalar('avatar')
+            ->maxLength('avatar', 100)
+            ->requirePresence('avatar', 'create')
+            ->notEmptyString('avatar');
+
+        $validator
             ->scalar('full_name')
             ->maxLength('full_name', 50)
             ->requirePresence('full_name', 'create')
@@ -76,6 +82,11 @@ class AdminTable extends Table
             ->maxLength('phone', 20)
             ->requirePresence('phone', 'create')
             ->notEmptyString('phone');
+
+        $validator
+            ->boolean('gender')
+            ->requirePresence('gender', 'create')
+            ->notEmptyString('gender');
 
         $validator
             ->requirePresence('level', 'create')

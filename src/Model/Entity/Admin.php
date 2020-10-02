@@ -11,8 +11,10 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property string $email
  * @property string $password
+ * @property string $avatar
  * @property string $full_name
  * @property string $phone
+ * @property bool $gender
  * @property int $level
  * @property int $deleted
  */
@@ -30,8 +32,10 @@ class Admin extends Entity
     protected $_accessible = [
         'email' => true,
         'password' => true,
+        'avatar' => true,
         'full_name' => true,
         'phone' => true,
+        'gender' => true,
         'level' => true,
         'deleted' => true,
     ];
